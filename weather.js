@@ -7,24 +7,29 @@ $(function() {
 
 
       var markup =
-      "<p>It is currently " + data.currently.summary +
-      " and " + data.currently.temperature +
-      " degrees.</p>" +
+      "<h1>Chicago Weather</h1>" +
 
-      "<p>It feels like " + data.currently.apparentTemperature +
-      " degrees and the windspeed is " + data.currently.windSpeed + " mph.</p>" +
+      "<h3>Current Conditions</h3>" +
+      "<ul><li>It is currently " + data.currently.summary +
 
-      "<br>Tomorrow, the high will be " + data.daily.data[1].apparentTemperatureMax + " degrees." +
+      "<li>The temperature is " + data.currently.temperature +
+      "<li>It feels like " + data.currently.apparentTemperature +
+      "<li> degrees and the windspeed is " + data.currently.windSpeed + " mph.</ul>" +
 
-      "<br>Tomorrow, the high will be " + data.daily.data[1].apparentTemperatureMax + " degrees." +
-      "<br>The next day, the high will be " + data.daily.data[2].apparentTemperatureMax + " degrees." +
-      "<br>Three days from now, the high will be " + data.daily.data[3].apparentTemperatureMax + " degrees."
+      "<h3>3-Day Forecast</h3>" +
+      "<ul><li>Tomorrow, the high will be " + data.daily.data[1].temperatureMax + " degrees." +
+      "<li>The next day, the high will be " + data.daily.data[2].temperatureMax + " degrees." +
+      "<li>Three days from now, the high will be " + data.daily.data[3].temperatureMax + " degrees.</ul>" +
+
+      "<h3>7-Day Forecast</h3>" +
+      "<ul><li>" + data.daily.summary
 
     // var markup2 = "<p>It is " + data.currently.icon + " and windspeed is " + data.currently.windSpeed + ".</p>"
     // End of your code
 
     $('.weather-report').html(markup);
   }
+
   $('a.get-the-weather').on('click', function(event) {
     event.preventDefault();
     $.ajax({
