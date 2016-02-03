@@ -9,20 +9,18 @@ $(function() {
       var markup =
       "<h1>Chicago Weather</h1>" +
 
-      "<h3>Current Conditions</h3>" +
-      "<ul><li>It is currently " + data.currently.summary +
+      "<ul><h3>Current Conditions</h3>" +
+      "<ul><li>The temperature is " + data.currently.temperature + " degrees." +
+      "<li>It is currently " + data.currently.summary + "." +
+      "<li>It feels like " + data.currently.apparentTemperature + " degrees." +
 
-      "<li>The temperature is " + data.currently.temperature +
-      "<li>It feels like " + data.currently.apparentTemperature +
-      "<li> degrees and the windspeed is " + data.currently.windSpeed + " mph.</ul>" +
-
-      "<h3>3-Day Forecast</h3>" +
+      "</ul><h3>3-Day Forecast</h3>" +
       "<ul><li>Tomorrow, the high will be " + data.daily.data[1].temperatureMax + " degrees." +
       "<li>The next day, the high will be " + data.daily.data[2].temperatureMax + " degrees." +
       "<li>Three days from now, the high will be " + data.daily.data[3].temperatureMax + " degrees.</ul>" +
 
       "<h3>7-Day Forecast</h3>" +
-      "<ul><li>" + data.daily.summary
+      "<ul><li>" + data.daily.summary + "</ul>"
 
     // var markup2 = "<p>It is " + data.currently.icon + " and windspeed is " + data.currently.windSpeed + ".</p>"
     // End of your code
